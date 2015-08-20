@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="480.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Controller">
+   <children>
+      <ImageView id="imageInput" fx:id="imageView" fitHeight="480.0" fitWidth="640.0" onMousePressed="#dragPressed" onMouseReleased="#dragReleased" pickOnBounds="true" preserveRatio="true" />
+      <Accordion layoutX="640.0" prefHeight="480.0" prefWidth="202.0">
+        <panes>
+          <TitledPane animated="false" prefHeight="288.0" prefWidth="202.0" text="Devices">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="6.0" text="Video Input Device" />
+                        <ChoiceBox fx:id="videoInputDeviceList" layoutX="14.0" layoutY="23.0" prefHeight="25.0" prefWidth="165.0" />
+                        <Label layoutX="14.0" layoutY="55.0" text="Motor Control Device" />
+                        <ChoiceBox fx:id="motorControlDeviceList" layoutX="14.0" layoutY="72.0" prefHeight="25.0" prefWidth="165.0" />
+                        <Button fx:id="connectDevicesButton" layoutX="45.0" layoutY="177.0" mnemonicParsing="false" onMouseClicked="#connectDevices" text="Connect Devices" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" prefHeight="339.0" prefWidth="202.0" text="Options">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="fileLocation" editable="false" layoutX="14.0" layoutY="38.0" prefHeight="25.0" prefWidth="170.0" />
+                        <Label layoutX="14.0" layoutY="21.0" text="Recording File Location" />
+                        <Button layoutX="122.0" layoutY="63.0" mnemonicParsing="false" onMouseClicked="#browseFileLocation" text="Browse..." />
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+            <TitledPane animated="false" layoutX="10.0" layoutY="60.0" prefHeight="339.0" prefWidth="202.0" text="Controls">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="trackingButton" layoutX="50.0" layoutY="156.0" mnemonicParsing="false" onMouseClicked="#tracking" prefWidth="100.0" text="Start Tracking" />
+                        <Button fx:id="recordingButton" layoutX="50.0" layoutY="190.0" mnemonicParsing="false" onMouseClicked="#recording" prefHeight="25.0" prefWidth="100.0" text="Start Recording" />
+                        <Button layoutX="87.0" layoutY="38.0" mnemonicParsing="false" onMouseClicked="#up" prefWidth="28.0" text="▲" />
+                        <Button layoutX="87.0" layoutY="88.0" mnemonicParsing="false" onMouseClicked="#down" prefHeight="25.0" prefWidth="28.0" text="▼" />
+                        <Button layoutX="115.0" layoutY="63.0" mnemonicParsing="false" onMouseClicked="#right" prefWidth="28.0" text="▶" />
+                        <Button layoutX="59.0" layoutY="63.0" mnemonicParsing="false" onMouseClicked="#left" prefWidth="28.0" text="◀" />
+                     </children></AnchorPane>
+               </content>
+            </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</AnchorPane>
